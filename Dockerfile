@@ -1,8 +1,9 @@
-FROM 		progrium/busybox 
+FROM 		progrium/busybox
 MAINTAINER 	Jeff Lindsay <progrium@gmail.com>
 
-ADD https://dl.bintray.com/mitchellh/consul/0.3.0_linux_amd64.zip /tmp/consul.zip
+ADD https://dl.bintray.com/mitchellh/consul/0.3.1_linux_amd64.zip /tmp/consul.zip
 RUN cd /bin && unzip /tmp/consul.zip && chmod +x /bin/consul
+# ADD ./consul /bin/consul
 
 RUN opkg-install curl
 
